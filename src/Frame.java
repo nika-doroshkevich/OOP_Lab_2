@@ -1,9 +1,4 @@
-import Figures.Circle;
-import Figures.Ellipse;
-import Figures.Figure;
-import Figures.Polygon;
-import Panels.CirclePanel;
-import Panels.FigurePanel;
+import Panels.*;
 import Panels.Panel;
 
 import javax.swing.*;
@@ -14,7 +9,6 @@ import java.awt.event.ActionListener;
 public class Frame extends JFrame {
     Panels.Panel p = new Panel(this);
     JPanel panel;
-    Figure f;
     String[] masNames = {"None","Circle","Ellipse","Polygon","Rectangle","Square","Triangle"};
     JComboBox selectBox = new JComboBox(masNames);
 
@@ -40,15 +34,29 @@ public class Frame extends JFrame {
                        panel = new CirclePanel(p,s);
                         break;
                     case "Polygon":
-                        panel = new FigurePanel(p,s);
+                        panel = new PolygonPanel(p,s);
                         break;
                     case "Ellipse":
-                        panel = new FigurePanel(p,s);
+                        panel = new EllipsePanel(p,s);
+                        break;
+                    case "Rectangle":
+                        panel = new RectanglePanel(p,s);
+                        break;
+                    case "Square":
+                        panel = new SquarePanel(p,s);
+                        break;
+                    case "Triangle":
+                        panel = new TrianglePanel(p,s);
                         break;
                 }
                 add(panel, BorderLayout.EAST);
-                setSize(701,701);
-                setSize(700,700);
+
+                {
+                    int w = getWidth();
+                    int h = getHeight();
+                    setSize(w + 1, h);
+                    setSize(w, h);
+                }
             }
         });
     }

@@ -24,9 +24,14 @@ public class FigurePanel extends JPanel {
         button.addMouseListener(new MouseListener() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                clickButton();
+                try {
+                    clickButton();
+                }catch (RuntimeException exep){
+                    JOptionPane.showConfirmDialog(panel, exep.getMessage());
+                }
                 panel.addFigure(f);
                 panel.reDraw();
+
             }
 
             @Override
@@ -53,5 +58,4 @@ public class FigurePanel extends JPanel {
     public void clickButton(){
 
     }
-
 }
