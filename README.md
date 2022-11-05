@@ -1,4 +1,4 @@
-# My second lab in Java for the subject "Object-oriented programming technologies and design standards (Part 1)"
+# My second lab in Java for the subject "Object-oriented programming technologies and design standards (Part 1)" :tulip:
 
 :mortar_board: I did this lab in the second year of university in the fourth semester.
 
